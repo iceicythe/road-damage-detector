@@ -12,6 +12,17 @@
 
 各项取同一次训练的最佳 mAP50–95 轮。**现有划分存在跨集合近重复风险：自动筛出 47 对 train/val 相似候选，抽查发现高度相似道路画面。以上仅为当前图片划分下的验证结果，不能声称道路独立泛化成绩。** 详情见 [相似性审计](reports/split-similarity.md) 和 [实验对比](reports/n640-d10x2-results.md)。
 
+## 快速体验
+
+仓库不包含 RDD2022 原始数据、训练权重和 `runs/` 运行产物。准备好数据与 `runs/train/n640/weights/best.pt` 后，可以直接启动本地巡检页面：
+
+```powershell
+python -m pip install -e ".[dev,demo]"
+python -m streamlit run app.py --server.address 127.0.0.1
+```
+
+打开 `http://127.0.0.1:8501`，选择「体验示例」或上传道路图片。页面支持批量检测、低置信度优先复核、图片拖框补标、表格修正、版本历史和 YOLO 标签导出。数据准备、训练、评测和 ONNX 部署流程见下文。
+
 ## 项目亮点
 
 - 将 RDD2022 的 VOC XML 标注转换为 YOLO 格式，记录数据清单、哈希和异常样本。
