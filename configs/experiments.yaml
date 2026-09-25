@@ -1,0 +1,22 @@
+# Each preset overlays base.yaml. Batch differs for n960 and must be reported.
+smoke:
+  name: smoke_retry1
+  epochs: 3
+  patience: 0
+n640: {}
+n960:
+  name: n960
+  imgsz: 960
+  batch: 4
+s640:
+  name: s640
+  model: yolo11s.pt
+n640_d10x2:
+  name: n640_d10x2
+  data: data/processed/rdd_d10x2/dataset.yaml
+  # 8920 entries x 91 epochs: approximately the baseline's 8103 x 100 batch budget.
+  # Early stopping may change actual budgets; compare actual steps and elapsed time.
+  epochs: 91
+  save: true
+  save_period: 10
+

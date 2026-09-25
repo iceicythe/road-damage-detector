@@ -1,0 +1,33 @@
+# Paths are relative to the repository, independent of the shell's directory.
+model: yolo11n.pt
+data: data/processed/rdd_v1/dataset.yaml
+project: runs/train
+name: n640
+imgsz: 640
+epochs: 100
+patience: 30
+batch: 8
+device: "0"
+workers: 0
+seed: 42
+deterministic: true
+amp: true
+pretrained: true
+optimizer: AdamW
+lr0: 0.001
+weight_decay: 0.0005
+# Conservative first baseline; no orientation-changing rotations.
+degrees: 0.0
+shear: 0.0
+perspective: 0.0
+flipud: 0.0
+fliplr: 0.5
+translate: 0.1
+scale: 0.2
+hsv_h: 0.0
+hsv_s: 0.2
+hsv_v: 0.2
+mosaic: 0.0
+mixup: 0.0
+plots: true
+
