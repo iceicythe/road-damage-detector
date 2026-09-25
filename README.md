@@ -313,11 +313,8 @@ Ultralytics、模型和数据各自遵循其发布许可。首次训练可能下
 
 ![复核历史与导出](docs/assets/04_review_history.png)
 
-截图完成后，如果补充了部署报告截图，可以加入：
 
-```markdown
-![批量检测概览](docs/assets/01_batch_overview.png)
-![图片拖框复核](docs/assets/03_canvas_annotation.png)
-![部署验收结果](docs/assets/07_deployment_report.png)
-```
+
+
+
 
